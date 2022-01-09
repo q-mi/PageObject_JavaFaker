@@ -1,30 +1,18 @@
 package github.qmi.tests;
 
-import com.github.javafaker.Faker;
-import github.qmi.componentes.CalendarComponent;
 import github.qmi.page.Gender;
 import github.qmi.page.Hobbies;
 import github.qmi.page.RegistrationFormPage;
 import org.junit.jupiter.api.Test;
-
-import java.util.Locale;
 
 import static github.qmi.page.Gender.MALE;
 import static github.qmi.tests.TestData.*;
 
 public class TextBoxWithPageObjectsAndRandomFakerTest extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
-    private final Faker faker = new Faker(new Locale("en"));
-    public CalendarComponent calendar = new CalendarComponent();
 
     @Test
     void TextBoxWithPageObjectsAndRandomFakerTest() {
-        String firstName = faker.name().firstName(),
-                lastName = faker.name().lastName(),
-                email = faker.internet().emailAddress(),
-                userNumber = faker.phoneNumber().subscriberNumber(10),
-                address = faker.address().streetAddress();
-
         registrationFormPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)

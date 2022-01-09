@@ -9,4 +9,3 @@ public class TestBase {
         Configuration.startMaximized = true;
     }
 }
-
